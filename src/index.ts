@@ -61,7 +61,19 @@ class RedisAdapter implements IIdempotencyDataAdapter {
 	async findByIdempotencyKey(idempotencyKey: string) {
 		const jsonDump = await this.#client.get(idempotencyKey);
 
-		return jsonDump ? (JSON.parse(jsonDump) as IdempotencyResource) : null;
+		if (jsonDump) {
+			const payload = {
+				idempotencyKey,
+				...(JSON.parse(jsonDump) as Omit<
+				IdempotencyResource,
+				'idempotencyKey'
+				>),
+			};
+
+			return payload;
+		}
+
+		return null;
 	}
 
 	async #createOrUpdate({idempotencyKey, ...payload}: IdempotencyResource) {

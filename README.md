@@ -23,7 +23,7 @@ Integrate the data adapter during the middleware initialization.
 
 ```javascript
 const idempotency = require("express-idempotency");
-const RedisAdapter = require("express-idempotency-redis-adapter");
+const RedisAdapter = require("express-idempotency-redis-adapter").default;
 
 // New Redis Adapter that will be used by the idempotency middleware
 const adapter = new RedisAdapter({

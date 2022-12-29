@@ -9,7 +9,7 @@ import {
 	type RedisClientType,
 } from '@redis/client';
 
-const timeToLive = 86_400;
+const ttl = 86_400;
 
 type PartialRedisAdapterOptions = {
 	ttl?: number;
@@ -33,13 +33,9 @@ class RedisAdapter implements IIdempotencyDataAdapter {
 	#ttl;
 	#client;
 
-	constructor({
-		connectionConfig,
-		connectionInstance,
-		ttl = timeToLive,
-	}: RedisAdapterOptions) {
-		this.#client = connectionInstance ?? createClient(connectionConfig);
-		this.#ttl = ttl;
+	constructor(options?: RedisAdapterOptions) {
+		this.#ttl = options?.ttl ?? ttl;
+		this.#client = options?.connectionInstance ?? createClient(options?.connectionConfig);
 	}
 
 	get isOpen() {

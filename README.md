@@ -46,7 +46,7 @@ The data adapter will take care of everything required to store data from the ex
 
 ### Options
 
-You can configure the data adapter by providing options during initialization.
+You can optionally configure the data adapter by providing options during initialization.
 
 | Property           | Mandatory | Default | Description                                                                                                                 |
 | ------------------ | --------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |

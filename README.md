@@ -56,7 +56,7 @@ You can configure the data adapter by providing options during initialization.
 
 > Note: You can only pass either `connectionConfig` or `connectionInstance`
 
-#### Redis configuration and delegation
+#### Redis configuration
 
 The data adapter can manage connection itself by providing a Redis configuration. It will use the [node-redis](https://github.com/redis/node-redis) package.
 

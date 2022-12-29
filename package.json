@@ -1,0 +1,40 @@
+{
+  "name": "express-idempotency-redis-adapter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "typings/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:dry": "npm run build -- --noEmit",
+    "lint": "xo",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "is-ci || husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alias-rahil/express-idempotency-redis-adapter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alias-rahil/express-idempotency-redis-adapter/issues"
+  },
+  "homepage": "https://github.com/alias-rahil/express-idempotency-redis-adapter#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@tsconfig/recommended": "^1.0.1",
+    "express-idempotency": "^1.0.5",
+    "husky": "^8.0.2",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^13.1.0",
+    "typescript": "^4.9.4",
+    "xo": "^0.53.1"
+  },
+  "dependencies": {
+    "@redis/client": "^1.4.2"
+  }
+}

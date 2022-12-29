@@ -35,7 +35,9 @@ class RedisAdapter implements IIdempotencyDataAdapter {
 
 	constructor(options?: RedisAdapterOptions) {
 		this.#ttl = options?.ttl ?? ttl;
-		this.#client = options?.connectionInstance ?? createClient(options?.connectionConfig);
+
+		this.#client
+      = options?.connectionInstance ?? createClient(options?.connectionConfig);
 	}
 
 	get isOpen() {

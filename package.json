@@ -1,6 +1,6 @@
 {
   "name": "express-idempotency-redis-adapter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
   "types": "typings/index.d.ts",
